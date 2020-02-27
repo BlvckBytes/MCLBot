@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="unnamed" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66bb59d2-7039-49b1-a540-eef7a459e3c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/protlib.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/ClientListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/MinecraftConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/MinecraftProtocol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/ServerListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/ServerLoginHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/SubProtocol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/Chunk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/EntityMetadata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/ItemStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/NibbleArray3d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/Rotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/ShortArray3d.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/attribute/Attribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/attribute/AttributeModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/ClientRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/Face.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/HandshakeIntent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/MagicValues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/MessageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/PlayerListEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/PlayerListEntryAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/ResourcePackStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/TitleAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/Art.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/AttributeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/Effect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/EntityStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/FallingBlockData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/GlobalEntityType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/HangingDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/MetadataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/MinecartType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/MobType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/ModifierOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/ModifierType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/ObjectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/ObjectType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/ProjectileData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/SplashPotionData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/BlockBreakStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/CombatState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/GameMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/InteractAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/PlayerAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/PlayerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/entity/player/PositionElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/NameTagVisibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/ObjectiveAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/ScoreType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/ScoreboardAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/ScoreboardPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/TeamAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/scoreboard/TeamColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/setting/ChatVisibility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/setting/Difficulty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/setting/SkinPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/Achievement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/BreakBlockStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/BreakItemStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/CraftItemStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/GenericStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/KillEntityStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/KilledByEntityStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/Statistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/statistic/UseItemStatistic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/ClickItemParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/CreativeGrabParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/DropItemParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/FillStackParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/MoveToHotbarParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/ShiftClickItemParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/SpreadItemParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/WindowAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/WindowActionParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/WindowType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/property/AnvilProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/property/BrewingStandProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/property/EnchantmentTableProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/property/FurnaceProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/window/property/WindowProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/CustomSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/GenericSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/WorldBorderAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/WorldType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/BlockChangeRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/ExplodedBlockRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/UpdatedTileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/BlockValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/BlockValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/ChestValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/ChestValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/GenericBlockValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/GenericBlockValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/MobSpawnerValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/MobSpawnerValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/NoteBlockValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/NoteBlockValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/PistonValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/block/value/PistonValueType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/BreakBlockEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/BreakPotionEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/HardLandingEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/ParticleEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/RecordEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/SmokeEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/SoundEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/WorldEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/effect/WorldEffectData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/map/MapData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/map/MapPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/notify/ClientNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/notify/ClientNotificationValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/notify/DemoMessageValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/notify/RainStrengthValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/game/values/world/notify/ThunderStrengthValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/ChatColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/ChatFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/ClickAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/ClickEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/HoverAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/HoverEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/MessageStyle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/TextMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/message/TranslationMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/PlayerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/ServerStatusInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/VersionInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/handler/ServerInfoBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/handler/ServerInfoHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/data/status/handler/ServerPingTimeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/handshake/client/HandshakePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientChatPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientKeepAlivePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientPluginMessagePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientRequestPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientResourcePackStatusPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientSettingsPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/ClientTabCompletePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientChangeHeldItemPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerAbilitiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerActionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerInteractEntityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerMovementPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerPlaceBlockPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerPositionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerPositionRotationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerRotationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientPlayerStatePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientSpectatePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientSteerVehiclePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/player/ClientSwingArmPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/window/ClientCloseWindowPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/window/ClientConfirmTransactionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/window/ClientCreativeInventoryActionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/window/ClientEnchantItemPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/window/ClientWindowActionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/client/world/ClientUpdateSignPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerChatPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerCombatPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerDifficultyPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerDisconnectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerJoinGamePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerKeepAlivePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerPlayerListDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerPlayerListEntryPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerPluginMessagePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerResourcePackSendPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerRespawnPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerSetCompressionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerStatisticsPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerSwitchCameraPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerTabCompletePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/ServerTitlePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerAnimationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerCollectItemPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerDestroyEntitiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityAttachPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityEffectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityEquipmentPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityHeadLookPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityMetadataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityMovementPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityNBTUpdatePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityPositionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityPositionRotationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityPropertiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityRemoveEffectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityRotationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityStatusPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityTeleportPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/ServerEntityVelocityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerChangeHeldItemPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerPlayerAbilitiesPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerPlayerPositionRotationPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerPlayerUseBedPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerSetExperiencePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/player/ServerUpdateHealthPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnExpOrbPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnGlobalEntityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnMobPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnObjectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnPaintingPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/entity/spawn/ServerSpawnPlayerPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/scoreboard/ServerDisplayScoreboardPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/scoreboard/ServerScoreboardObjectivePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/scoreboard/ServerTeamPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/scoreboard/ServerUpdateScorePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerCloseWindowPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerConfirmTransactionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerOpenWindowPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerSetSlotPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerWindowItemsPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/window/ServerWindowPropertyPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerBlockBreakAnimPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerBlockChangePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerBlockValuePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerChunkDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerExplosionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerMapDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerMultiBlockChangePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerMultiChunkDataPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerNotifyClientPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerOpenTileEntityEditorPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerPlayEffectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerPlaySoundPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerSpawnParticlePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerSpawnPositionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerUpdateSignPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerUpdateTileEntityPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerUpdateTimePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/ingame/server/world/ServerWorldBorderPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/client/EncryptionResponsePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/client/LoginStartPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/server/EncryptionRequestPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/server/LoginDisconnectPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/server/LoginSetCompressionPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/login/server/LoginSuccessPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/status/client/StatusPingPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/status/client/StatusQueryPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/status/server/StatusPongPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/packet/status/server/StatusResponsePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/util/CryptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/util/NetUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/util/NetworkChunkData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol/util/ParsedChunkData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ControlConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/FullLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCLAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCLCerts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/PersistentSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SLLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimplePath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCChat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDestroy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHelp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCNew.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCQuit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSelect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCUnselect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MasterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/ProxyEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/RUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/spacehq/mc/protocol/ByteBufHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/spacehq/mc/protocol/MinecraftProtocolTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/spacehq/mc/protocol/util/NetUtilTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Y4NodTo9DDQp8NrYFYRis4sYro" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.21875" />
+    <property name="project.structure.side.proportion" value="0.3024055" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.blvckbytes.bottesting.Main" />
+      <module name="mcprotocollib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.blvckbytes.bottesting.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinecraftProtocolTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.blvckbytes.mctesting.MinecraftProtocolTest" />
+      <module name="mcprotocollib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.blvckbytes.mctesting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MinecraftProtocolTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66bb59d2-7039-49b1-a540-eef7a459e3c9" name="Default Changelist" comment="" />
+      <created>1582198082592</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582198082592</updated>
+      <workItem from="1582198086062" duration="620000" />
+      <workItem from="1582219456321" duration="2223000" />
+      <workItem from="1582221772442" duration="435000" />
+      <workItem from="1582222240120" duration="16439000" />
+      <workItem from="1582274480352" duration="988000" />
+      <workItem from="1582280446043" duration="2830000" />
+      <workItem from="1582328871132" duration="14469000" />
+      <workItem from="1582370421109" duration="4845000" />
+      <workItem from="1582383356447" duration="18511000" />
+      <workItem from="1582461913702" duration="20115000" />
+      <workItem from="1582488850068" duration="159000" />
+      <workItem from="1582492551950" duration="4461000" />
+      <workItem from="1582500281788" duration="157000" />
+      <workItem from="1582525446460" duration="62000" />
+      <workItem from="1582528535395" duration="545000" />
+      <workItem from="1582529109841" duration="5000" />
+      <workItem from="1582535336597" duration="9728000" />
+      <workItem from="1582567256300" duration="2107000" />
+      <workItem from="1582676981001" duration="120000" />
+      <workItem from="1582709218071" duration="202000" />
+      <workItem from="1582751990059" duration="178000" />
+      <workItem from="1582787892408" duration="654000" />
+      <workItem from="1582795515990" duration="8000" />
+      <workItem from="1582795574989" duration="2360000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582237529849">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="424" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1582237529849" />
+    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1582540566493">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1018@0.23.1920.1018" timestamp="1582540566493" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1582796741924">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1582796741924" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1582796741924">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1582796741924" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1582796741923">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1582796741923" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1582796741924">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1582796741924" />
+    <state x="498" y="194" key="Maven.ArtifactSearchDialog" timestamp="1582198192217">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="498" y="194" key="Maven.ArtifactSearchDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1582198192217" />
+    <state x="461" y="171" width="1118" height="837" key="SettingsEditor" timestamp="1582500372551">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="461" y="171" width="1118" height="837" key="SettingsEditor/0.23.1920.1018@0.23.1920.1018" timestamp="1582500372551" />
+    <state x="527" y="142" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582399814447">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="527" y="142" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1920.1018@0.23.1920.1018" timestamp="1582399814447" />
+    <state x="618" y="289" width="761" height="486" key="find.popup" timestamp="1582797282495">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="618" y="289" width="761" height="486" key="find.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1582797282495" />
+    <state x="337" y="229" key="new project wizard" timestamp="1582339542314">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="337" y="229" key="new project wizard/0.23.1920.1018@0.23.1920.1018" timestamp="1582339542314" />
+    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1582797256215">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1582797256215" />
+  </component>
+</project>

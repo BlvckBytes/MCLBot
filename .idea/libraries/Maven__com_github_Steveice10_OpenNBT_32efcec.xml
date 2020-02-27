@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.Steveice10:OpenNBT:32efcec">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/opennbt/32efcec/OpenNBT-32efcec.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Steveice10/OpenNBT/32efcec/OpenNBT-32efcec-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Steveice10/OpenNBT/32efcec/OpenNBT-32efcec-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

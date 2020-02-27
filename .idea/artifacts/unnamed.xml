@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="archive" name="protlib.jar">
+      <element id="module-output" name="mcprotocollib" />
+      <element id="library" level="project" name="Maven: com.github.Steveice10:MCAuthLib:4aecadd" />
+      <element id="library" level="project" name="Maven: com.github.Steveice10:OpenNBT:32efcec" />
+      <element id="library" level="project" name="Maven: com.github.Steveice10:PacketLib:f846b96" />
+    </root>
+  </artifact>
+</component>

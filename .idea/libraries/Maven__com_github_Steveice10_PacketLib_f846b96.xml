@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.Steveice10:PacketLib:f846b96">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/steveice10/packetlib/f846b96/PacketLib-f846b96.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Steveice10/PacketLib/f846b96/PacketLib-f846b96-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/Steveice10/PacketLib/f846b96/PacketLib-f846b96-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
