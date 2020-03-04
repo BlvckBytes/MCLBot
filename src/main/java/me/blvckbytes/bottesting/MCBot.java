@@ -6,10 +6,10 @@ import com.github.steveice10.mc.protocol.data.game.values.ClientRequest;
 import com.github.steveice10.mc.protocol.data.game.values.MessageType;
 import com.github.steveice10.mc.protocol.data.message.Message;
 import com.github.steveice10.mc.protocol.packet.ingame.client.ClientRequestPacket;
+import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionRotationPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerOpenWindowPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
 import me.blvckbytes.bottesting.utils.Utils;
@@ -131,7 +131,6 @@ public class MCBot {
       // Cache items corresponding to window id
       ServerWindowItemsPacket itemPacket = ( ServerWindowItemsPacket ) itemInfo;
       this.currentItems.put( itemPacket.getWindowId(), itemPacket.getItems() );
-      System.out.println( "Got items for window " + itemPacket.getWindowId() + "!" );
     } );
     registerMonitor( itemMonitor );
 
@@ -217,6 +216,17 @@ public class MCBot {
       // Log messages of all types
       SimpleLogger.getInst().log( "(" + chatPacket.getType() + ") " + chatPacket.getMessage(), SLLevel.GAME );
     }
+  }
+
+  /**
+   * Send the current position to the server in order to update
+   * all previous actions
+   */
+  public void sendPosition() {
+    FullLocation loc = this.master.currSel.getLastLoc();
+    getClient().getSession().send(
+        new ClientPlayerPositionRotationPacket( true, loc.getX(), loc.getY(), loc.getZ(), loc.getYaw(), loc.getPitch() )
+    );
   }
 
   /**

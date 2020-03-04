@@ -11,8 +11,10 @@ public class GoalPipe {
 
   private List< BotGoal > goals;
   private MCBot dispatcher;
-  private int state;
   private String name;
+
+  private String[] passedParams;
+  private int state;
 
   /**
    * Generates a new goal pipeline to execute one after the
@@ -22,6 +24,7 @@ public class GoalPipe {
   public GoalPipe( MCBot dispatcher, String name ) {
     this.goals = new ArrayList<>();
     this.dispatcher = dispatcher;
+    this.passedParams = new String[ 0 ];
     this.name = name;
   }
 
@@ -37,28 +40,36 @@ public class GoalPipe {
    * Execute pipeline recursively
    */
   public void execute() {
-    // Empty pipe, stop
-    if( goals.size() == 0 )
-      return;
+    try {
+      // Empty pipe, stop
+      if( goals.size() == 0 )
+        return;
 
-    // Done with pipeline
-    if( state == goals.size() ) {
-      SimpleLogger.getInst().log( "Successfully completed the pipeline " + name + "!", SLLevel.INFO );
-      return;
-    }
-
-    // Call recursively through pipeline
-    goals.get( state ).call( this.dispatcher, done -> {
-
-      // Stop recursion on errors in a pipe goal
-      if( done != null ) {
-        SimpleLogger.getInst().log( "Error in pipeline: " + done, SLLevel.ERROR );
+      // Done with pipeline
+      if( state == goals.size() ) {
+        SimpleLogger.getInst().log( "Successfully completed the pipeline " + name + "!", SLLevel.INFO );
         return;
       }
 
-      // Launch next
-      state++;
-      execute();
-    } );
+      // Call recursively through pipeline
+      goals.get( state ).appendParams( passedParams ).call( this.dispatcher, done -> {
+
+        // Cache params for next goal
+        passedParams = done.passedParams;
+
+        // Stop recursion on errors in a pipe goal
+        if( done.error != null ) {
+          SimpleLogger.getInst().log( "Error in pipeline: " + done.error, SLLevel.ERROR );
+          return;
+        }
+
+        // Launch next
+        state++;
+        execute();
+      } );
+    } catch ( Exception e ) {
+      SimpleLogger.getInst().log( "Error while executing pipeline!", SLLevel.ERROR );
+      SimpleLogger.getInst().log( e, SLLevel.ERROR );
+    }
   }
 }

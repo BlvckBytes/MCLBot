@@ -222,6 +222,7 @@ public class BotMaster {
     this.commands.add( new MCSave( this ) );
     this.commands.add( new MCTarget( this ) );
     this.commands.add( new MCRunPipe( this ) );
+    this.commands.add( new MCHand( this ) );
   }
 
   /**

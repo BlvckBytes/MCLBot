@@ -15,7 +15,11 @@ public class GPJoinGold extends GoalPipe {
     createGoals();
   }
 
+  /**
+   * Register all goals in correct order
+   */
   private void createGoals() {
-    registerGoal( new BGHotbarMenuClick( "Teleporter", "Spawn" ) );
+    registerGoal( new BGHotbarMenu( "Teleporter" ) );
+    registerGoal( new BGInvClick( "13" ) );
   }
 }

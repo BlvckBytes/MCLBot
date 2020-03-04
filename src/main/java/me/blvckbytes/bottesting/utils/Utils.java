@@ -52,6 +52,41 @@ public class Utils {
   }
 
   /**
+   * Check multiple strings for integers
+   * @param input Multiple strings to check
+   * @return Parsable state
+   */
+  public static boolean isInt( String... input ) {
+    boolean allInts = true;
+
+    // Loop all parameters
+    for( String curr : input ) {
+      if( isInt( curr ) )
+        continue;
+
+      // False if one is not an int
+      allInts = false;
+      break;
+    }
+
+    return allInts;
+  }
+
+  /**
+   * Combine two string arrays
+   * @param a First
+   * @param b Second
+   * @return Merged array
+   */
+  public static Object[] combineArrays( Object[] a, Object[] b ){
+    int length = a.length + b.length;
+    Object[] result = new String[ length ];
+    System.arraycopy( a, 0, result, 0, a.length );
+    System.arraycopy( b, 0, result, a.length, b.length );
+    return result;
+  }
+
+  /**
    * Concat an array with space as separator
    * @param data String parts
    * @param from From index
