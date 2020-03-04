@@ -1,14 +1,16 @@
 package me.blvckbytes.bottesting;
 
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
+import com.github.steveice10.mc.protocol.data.game.ItemStack;
 import com.github.steveice10.mc.protocol.data.game.values.ClientRequest;
 import com.github.steveice10.mc.protocol.data.game.values.MessageType;
 import com.github.steveice10.mc.protocol.data.message.Message;
 import com.github.steveice10.mc.protocol.packet.ingame.client.ClientRequestPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
+import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerOpenWindowPacket;
+import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
 import me.blvckbytes.bottesting.utils.Utils;
 import org.spacehq.mc.auth.exception.request.RequestException;
@@ -19,11 +21,8 @@ import org.spacehq.packetlib.event.session.SessionAdapter;
 import org.spacehq.packetlib.packet.Packet;
 import org.spacehq.packetlib.tcp.TcpSessionFactory;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.util.UUID;
+import java.util.*;
 
 public class MCBot {
 
@@ -34,18 +33,31 @@ public class MCBot {
   private String token;
   private String password;
 
-  // 80.91.190.188:8181
-  private Proxy proxy = Proxy.NO_PROXY; // new Proxy( Proxy.Type.SOCKS, new InetSocketAddress( "80.91.190.188", 8181 ) );
+  private Proxy proxy = Proxy.NO_PROXY;// new Proxy( Proxy.Type.HTTP, new InetSocketAddress( "178.128.118.193", 44321 ) );
 
   // Target server details
   private String address;
   private int port;
 
   // Bot properties
-  private int entID;
-  private FullLocation lastPos;
-  private boolean hasJoinRespawned;
   private boolean hasRejoined;
+  private List< PacketMonitor > monitors;
+
+  @Getter
+  private Map< Integer, ItemStack[] > currentItems;
+
+  @Getter
+  private FullLocation lastLoc;
+
+  /**
+   * Empty constructor is only used for common called stuff, should
+   * never ever be accessible from outside
+   */
+  private MCBot() {
+    this.monitors = new ArrayList<>();
+    this.currentItems = new HashMap<>();
+    createMonitors();
+  }
 
   /**
    * Initialize a new minecraft bot for all further desires to be executed
@@ -56,6 +68,7 @@ public class MCBot {
    * @param master Bot-Master controlling this bot, null if it's only a single instance
    */
   public MCBot( String using, String password, String address, int port, BotMaster master ) {
+    this();
     this.token = using;
     this.address = address;
     this.port = port;
@@ -73,6 +86,7 @@ public class MCBot {
    * @param master Bot-Master controlling this bot, null if it's only a single instance
    */
   public MCBot( String address, int port, MinecraftProtocol protocol, BotMaster master ) {
+    this();
     this.master = master;
     this.address = address;
     this.port = port;
@@ -83,59 +97,126 @@ public class MCBot {
   }
 
   /**
-   * Event method for incoming packets
-   * @param event Packet event with informations
+   * Register a monitor to start listening for specified
+   * packet type until destroyed
+   * @param monitor PacketMonitor instance
    */
-  private void packetEvent( PacketReceivedEvent event ) {
-    Packet packet = event.getPacket();
-    //SimpleLogger.getInst().log( "Incoming: " + event.getPacket().getClass().getSimpleName(), SLLevel.INFO );
+  public void registerMonitor( PacketMonitor monitor ) {
+    this.monitors.add( monitor );
+  }
 
-    if( packet instanceof ServerPlayerPositionRotationPacket ) {
-      ServerPlayerPositionRotationPacket pos = ( ServerPlayerPositionRotationPacket ) packet;
-      this.lastPos = new FullLocation( pos.getX(), pos.getY(), pos.getZ(), pos.getYaw(), pos.getPitch() );
+  /**
+   * Changes the target of
+   * @param host New host address
+   * @param port New port
+   */
+  public void changeTarget( String host, int port ) {
+    this.address = host;
+    this.port = port;
 
-      if( !hasJoinRespawned ) {
-        Utils.delayPacket( this.client, new ClientRequestPacket( ClientRequest.RESPAWN ), 100 );
-        hasJoinRespawned = true;
+    // Disconnect from current target
+    getClient().getSession().disconnect( "Master is changing the target." );
+
+    // Connect again with updated socket
+    reconnect();
+  }
+
+  /**
+   * Register used monitors
+   */
+  private void createMonitors() {
+    // Monitor for keeping track of the current items
+    PacketMonitor itemMonitor = new PacketMonitor( ServerWindowItemsPacket.class );
+    itemMonitor.setCallback( itemInfo -> {
+      // Cache items corresponding to window id
+      ServerWindowItemsPacket itemPacket = ( ServerWindowItemsPacket ) itemInfo;
+      this.currentItems.put( itemPacket.getWindowId(), itemPacket.getItems() );
+      System.out.println( "Got items for window " + itemPacket.getWindowId() + "!" );
+    } );
+    registerMonitor( itemMonitor );
+
+    // Monitor for respawing on join to avoid issues executing commands
+    PacketMonitor joinRespawnMonitor = new PacketMonitor( ServerPlayerPositionRotationPacket.class );
+    joinRespawnMonitor.setCallback( posInfo -> {
+      // Issue a respawn and destroy the monitor (only use once)
+      Utils.delayPacket( this.client, new ClientRequestPacket( ClientRequest.RESPAWN ), 100 );
+      joinRespawnMonitor.destroy();
+    } );
+    registerMonitor( joinRespawnMonitor );
+
+    // Monitor for keeping track of player's location
+    PacketMonitor locationMonitor = new PacketMonitor( ServerPlayerPositionRotationPacket.class );
+    locationMonitor.setCallback( posInfo -> {
+      ServerPlayerPositionRotationPacket posPacket = ( ServerPlayerPositionRotationPacket ) posInfo;
+      this.lastLoc = new FullLocation( posPacket.getX(), posPacket.getY(), posPacket.getZ(), posPacket.getYaw(), posPacket.getPitch() );
+    } );
+    registerMonitor( locationMonitor );
+
+    // Monitor for deaths in order to automatically respawn bot
+    PacketMonitor deathMonitor = new PacketMonitor( ServerChatPacket.class );
+    deathMonitor.setCallback( chatInfo -> {
+      ServerChatPacket chatPacket = ( ServerChatPacket ) chatInfo;
+
+      // Only listen for specific message structure signaling death
+      if( !( chatPacket.getType() == MessageType.SYSTEM && chatPacket.getMessage().toString().startsWith( "death." ) ) )
         return;
-      }
-    }
 
-    // Join packet
-    if( packet instanceof ServerJoinGamePacket ) {
-      this.entID = ( ( ServerJoinGamePacket ) packet ).getEntityId();
-      SimpleLogger.getInst().log( "Connected to " + client.getHost() + ":" + client.getPort() + "!", SLLevel.INFO );
-      return;
-    }
-
-    // Chat packet
-    if( packet instanceof ServerChatPacket ) {
-      ServerChatPacket chatPacket = event.getPacket();
-
-      // Automatic respawn on death
-      if( chatPacket.getType() == MessageType.SYSTEM && chatPacket.getMessage().toString().startsWith( "death." ) ) {
-        Utils.delayPacket( this.client, new ClientRequestPacket( ClientRequest.RESPAWN ), 500 );
-        Utils.delayPacket( this.client, new ClientPlayerPositionPacket(
-          false, this.lastPos.getX() + 0.1, this.lastPos.getY(), this.lastPos.getZ()
-        ), 600 );
-
-        // No printing if muted
-        if( isMuted() )
-          return;
-
-        SimpleLogger.getInst().log( "Bot died, automatic respawn packet sent!", SLLevel.WARNING );
-        return;
-      }
+      // Issue a delayed respawn
+      Utils.delayPacket( this.client, new ClientRequestPacket( ClientRequest.RESPAWN ), 500 );
 
       // No printing if muted
       if( isMuted() )
         return;
 
-      // Log chat
-      if( chatPacket.getType() != MessageType.NOTIFICATION )
-        SimpleLogger.getInst().log( "(" + chatPacket.getType() + ") " + chatPacket.getMessage(), SLLevel.GAME );
+      // Notify
+      SimpleLogger.getInst().log( "Bot died, automatic respawn packet sent!", SLLevel.WARNING );
+    } );
+    registerMonitor( deathMonitor );
+  }
+
+  /**
+   * Event method for incoming packets
+   * @param event Packet event with informations
+   */
+  private void packetEvent( PacketReceivedEvent event ) {
+    Packet packet = event.getPacket();
+
+    // Iterate from behind since delete is needed
+    for( int i = this.monitors.size() - 1; i >= 0; i-- ) {
+      PacketMonitor monitor = monitors.get( i );
+
+      // Delete destroyed monitors
+      if( monitor.getCallback() == null )
+        monitors.remove( i );
+
+      // Skip if class doesn't match
+      if( packet.getClass() != monitor.getTarget() )
+        continue;
+
+      // Invoke callback
+      monitor.getCallback().call( packet );
     }
 
+    // Join packet, notify in console
+    if( packet instanceof ServerJoinGamePacket ) {
+      SimpleLogger.getInst().log( "Connected to " + client.getHost() + ":" + client.getPort() + "!", SLLevel.INFO );
+    }
+
+    // Chat packet, notify in console
+    else if( packet instanceof ServerChatPacket ) {
+      ServerChatPacket chatPacket = event.getPacket();
+
+      // Bot not selected
+      if( isMuted() )
+        return;
+
+      // Don't care about action bar stuff
+      if( chatPacket.getType() == MessageType.NOTIFICATION )
+        return;
+
+      // Log messages of all types
+      SimpleLogger.getInst().log( "(" + chatPacket.getType() + ") " + chatPacket.getMessage(), SLLevel.GAME );
+    }
   }
 
   /**

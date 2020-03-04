@@ -5,7 +5,7 @@ public class Main {
   public static void main( String[] args ) {
 
     // Initialize a master
-    BotMaster master = new BotMaster( "bausucht.net", 25565, true );
+    BotMaster master = new BotMaster( "bausucht.net", 25565, false );
     master.begin();
 
   }

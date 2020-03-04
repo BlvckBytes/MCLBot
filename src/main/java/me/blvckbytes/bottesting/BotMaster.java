@@ -79,6 +79,19 @@ public class BotMaster {
   }
 
   /**
+   * Re-aims the whole network onto a new target server
+   * @param host New target host address
+   * @param port New target port
+   */
+  public void reaim( String host, int port ) {
+    this.server = host;
+    this.port = port;
+
+    for( MCBot bot : this.bots )
+      bot.changeTarget( this.server, this.port );
+  }
+
+  /**
    * Write all current managed sessions into a file for later use
    */
   public void saveSessions() {
@@ -207,6 +220,8 @@ public class BotMaster {
     this.commands.add( new MCCommand( this ) );
     this.commands.add( new MCDestroy( this ) );
     this.commands.add( new MCSave( this ) );
+    this.commands.add( new MCTarget( this ) );
+    this.commands.add( new MCRunPipe( this ) );
   }
 
   /**
