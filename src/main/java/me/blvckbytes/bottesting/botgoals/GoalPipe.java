@@ -10,7 +10,7 @@ import java.util.List;
 public class GoalPipe {
 
   private List< BotGoal > goals;
-  private MCBot dispatcher;
+  public MCBot dispatcher;
   private String name;
 
   private String[] passedParams;
@@ -51,22 +51,30 @@ public class GoalPipe {
         return;
       }
 
-      // Call recursively through pipeline
-      goals.get( state ).appendParams( passedParams ).call( this.dispatcher, done -> {
+      new Thread( () -> {
+        // Call recursively through pipeline
+        goals.get( state ).appendParams( passedParams ).call( this.dispatcher, done -> {
 
-        // Cache params for next goal
-        passedParams = done.passedParams;
+          // Cache params for next goal
+          passedParams = done.passedParams;
 
-        // Stop recursion on errors in a pipe goal
-        if( done.error != null ) {
-          SimpleLogger.getInst().log( "Error in pipeline: " + done.error, SLLevel.ERROR );
-          return;
-        }
+          // Stop recursion on errors in a pipe goal
+          if( done.error != null ) {
+            SimpleLogger.getInst().log( "Error in pipeline: " + done.error, SLLevel.ERROR );
+            return;
+          }
 
-        // Launch next
-        state++;
-        execute();
-      } );
+          // Launch next delayed
+          try {
+            Thread.sleep( 600 );
+            state++;
+            execute();
+          } catch ( Exception e ) {
+            e.printStackTrace();
+          }
+        } );
+
+      } ).start();
     } catch ( Exception e ) {
       SimpleLogger.getInst().log( "Error while executing pipeline!", SLLevel.ERROR );
       SimpleLogger.getInst().log( e, SLLevel.ERROR );

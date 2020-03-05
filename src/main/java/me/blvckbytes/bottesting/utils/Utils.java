@@ -80,7 +80,7 @@ public class Utils {
    */
   public static Object[] combineArrays( Object[] a, Object[] b ){
     int length = a.length + b.length;
-    Object[] result = new String[ length ];
+    Object[] result = new Object[ length ];
     System.arraycopy( a, 0, result, 0, a.length );
     System.arraycopy( b, 0, result, a.length, b.length );
     return result;

@@ -25,6 +25,22 @@ public class FullLocation {
   }
 
   /**
+   * Append a vector to this location and return the result,
+   * the vector itself does not get changed
+   * @param vec Vector to append
+   * @return Full location
+   */
+  public FullLocation append( Vec3D vec ) {
+    FullLocation appended = duplicate();
+    appended.setX( appended.getX() + vec.getX() );
+    appended.setY( appended.getY() + vec.getY() );
+    appended.setZ( appended.getZ() + vec.getZ() );
+    appended.setYaw( vec.getYaw() );
+    appended.setPitch( vec.getPitch() );
+    return appended;
+  }
+
+  /**
    * Convert this full location to a position consisting of
    * x, y and z only
    * @return Position object

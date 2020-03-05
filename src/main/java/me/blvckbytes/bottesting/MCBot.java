@@ -12,6 +12,7 @@ import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePack
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
+import lombok.Setter;
 import me.blvckbytes.bottesting.utils.Utils;
 import org.spacehq.mc.auth.exception.request.RequestException;
 import org.spacehq.packetlib.Client;
@@ -46,7 +47,7 @@ public class MCBot {
   @Getter
   private Map< Integer, ItemStack[] > currentItems;
 
-  @Getter
+  @Getter @Setter
   private FullLocation lastLoc;
 
   /**
