@@ -1,6 +1,8 @@
 package me.blvckbytes.bottesting.botgoals;
 
 import me.blvckbytes.bottesting.*;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
+import me.blvckbytes.bottesting.utils.Vec3D;
 
 public class BGVectorWalk extends BotGoal {
 

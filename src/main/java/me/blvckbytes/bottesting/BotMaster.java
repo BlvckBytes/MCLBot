@@ -3,6 +3,9 @@ package me.blvckbytes.bottesting;
 import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import lombok.Getter;
 import me.blvckbytes.bottesting.mastercmds.*;
+import me.blvckbytes.bottesting.mcleaks.MCLAuth;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 import org.spacehq.mc.auth.data.GameProfile;
 import org.spacehq.mc.auth.exception.request.RequestException;
 

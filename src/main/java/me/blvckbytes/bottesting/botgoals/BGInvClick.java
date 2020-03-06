@@ -5,9 +5,7 @@ import com.github.steveice10.mc.protocol.data.game.values.window.ClickItemParam;
 import com.github.steveice10.mc.protocol.data.game.values.window.WindowAction;
 import com.github.steveice10.mc.protocol.packet.ingame.client.window.ClientWindowActionPacket;
 import me.blvckbytes.bottesting.MCBot;
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleCallback;
-import me.blvckbytes.bottesting.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.Utils;
 
 public class BGInvClick extends BotGoal {
@@ -59,7 +57,6 @@ public class BGInvClick extends BotGoal {
     // Click item
     dispatcher.getClient().getSession().send( clickPacket );
     dispatcher.sendPosition();
-    SimpleLogger.getInst().log( "Successfully clicked item!", SLLevel.INFO );
     done.call( new GoalResult( null ) );
   }
 }

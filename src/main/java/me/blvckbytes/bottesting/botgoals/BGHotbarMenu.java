@@ -6,6 +6,7 @@ import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientChang
 import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPlaceBlockPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import me.blvckbytes.bottesting.*;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.Utils;
 import org.spacehq.opennbt.tag.builtin.CompoundTag;
 import org.spacehq.opennbt.tag.builtin.StringTag;
@@ -100,7 +101,6 @@ public class BGHotbarMenu extends BotGoal {
       openMonitor.destroy();
 
       // Done, inv is open
-      SimpleLogger.getInst().log( "Successfully opened inventory menu", SLLevel.INFO );
       done.call( new GoalResult( null, String.valueOf( windowPacket.getWindowId() ) ) );
     } );
     dispatcher.registerMonitor( openMonitor );

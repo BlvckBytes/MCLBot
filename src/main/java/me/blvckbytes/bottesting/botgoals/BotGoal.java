@@ -1,7 +1,7 @@
 package me.blvckbytes.bottesting.botgoals;
 
 import me.blvckbytes.bottesting.MCBot;
-import me.blvckbytes.bottesting.SimpleCallback;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.Utils;
 
 public abstract class BotGoal {

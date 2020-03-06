@@ -1,5 +1,7 @@
 package me.blvckbytes.bottesting;
 
+import me.blvckbytes.bottesting.utils.SimpleCallback;
+
 import java.util.Scanner;
 
 public class ControlConsole {

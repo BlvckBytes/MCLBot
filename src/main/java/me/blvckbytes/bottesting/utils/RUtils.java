@@ -1,8 +1,5 @@
 package me.blvckbytes.bottesting.utils;
 
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleLogger;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 

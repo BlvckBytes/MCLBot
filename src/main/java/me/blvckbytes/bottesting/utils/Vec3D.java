@@ -1,6 +1,7 @@
-package me.blvckbytes.bottesting;
+package me.blvckbytes.bottesting.utils;
 
 import lombok.Getter;
+import me.blvckbytes.bottesting.FullLocation;
 
 public class Vec3D {
 

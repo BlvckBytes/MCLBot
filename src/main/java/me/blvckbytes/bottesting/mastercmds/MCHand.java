@@ -1,11 +1,9 @@
 package me.blvckbytes.bottesting.mastercmds;
 
 import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientChangeHeldItemPacket;
-import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionRotationPacket;
 import me.blvckbytes.bottesting.BotMaster;
-import me.blvckbytes.bottesting.FullLocation;
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 import me.blvckbytes.bottesting.utils.Utils;
 
 public class MCHand extends MasterCommand {

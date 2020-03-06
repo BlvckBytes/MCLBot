@@ -1,6 +1,7 @@
 package me.blvckbytes.bottesting;
 
 import lombok.Getter;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import org.spacehq.packetlib.packet.Packet;
 
 public class PacketMonitor {

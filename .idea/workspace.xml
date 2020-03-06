@@ -7,21 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66bb59d2-7039-49b1-a540-eef7a459e3c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Vec3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGExecuteCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGPlayerClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/protlib.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/protlib.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ControlConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ControlConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/FullLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/FullLocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCLAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mcleaks/MCLAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCLCerts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mcleaks/MCLCerts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/PacketMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/PacketMonitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SLLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SLLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SimpleCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SimpleLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimplePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimplePath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/SimpleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SimpleRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Vec3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Vec3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGInvClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGInvClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGVectorWalk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BGVectorWalk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BotGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/BotGoal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GPJoinGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GPJoinGold.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GoalPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GoalPipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDestroy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDestroy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCQuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCQuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCRunPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCRunPipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSelect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCUnselect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCUnselect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/ProxyEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/RUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/RUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/FullLocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/FullLocation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ProxyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ProxyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGInvClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGInvClick.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGVectorWalk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGVectorWalk.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GPJoinGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GPJoinGold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GoalPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GoalPipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/ProxyEntry.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +195,7 @@
       <workItem from="1583416000268" duration="4440000" />
       <workItem from="1583422609879" duration="1061000" />
       <workItem from="1583449474044" duration="2996000" />
+      <workItem from="1583508045031" duration="2909000" />
     </task>
     <servers />
   </component>
@@ -175,26 +210,26 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="424" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1582237529849" />
-    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1583365597316">
+    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1583510041502">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1018@0.23.1920.1018" timestamp="1583365597316" />
-    <state width="1878" height="269" key="GridCell.Tab.0.bottom" timestamp="1583452492180">
+    <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1018@0.23.1920.1018" timestamp="1583510041502" />
+    <state width="1878" height="337" key="GridCell.Tab.0.bottom" timestamp="1583510313364">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="269" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583452492180" />
-    <state width="1878" height="269" key="GridCell.Tab.0.center" timestamp="1583452492179">
+    <state width="1878" height="337" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583510313364" />
+    <state width="1878" height="337" key="GridCell.Tab.0.center" timestamp="1583510313363">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="269" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583452492179" />
-    <state width="1878" height="269" key="GridCell.Tab.0.left" timestamp="1583452492179">
+    <state width="1878" height="337" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583510313363" />
+    <state width="1878" height="337" key="GridCell.Tab.0.left" timestamp="1583510313361">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="269" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583452492179" />
-    <state width="1878" height="269" key="GridCell.Tab.0.right" timestamp="1583452492180">
+    <state width="1878" height="337" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583510313361" />
+    <state width="1878" height="337" key="GridCell.Tab.0.right" timestamp="1583510313363">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="269" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583452492180" />
+    <state width="1878" height="337" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583510313363" />
     <state x="498" y="194" key="Maven.ArtifactSearchDialog" timestamp="1582198192217">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
@@ -211,10 +246,10 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="743" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1018@0.23.1920.1018" timestamp="1583421534950" />
-    <state x="618" y="289" width="797" height="486" key="find.popup" timestamp="1583323270533">
+    <state x="618" y="289" width="817" height="486" key="find.popup" timestamp="1583510555233">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state x="618" y="289" width="797" height="486" key="find.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583323270533" />
+    <state x="618" y="289" width="817" height="486" key="find.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583510555233" />
     <state x="337" y="229" key="new project wizard" timestamp="1582339542314">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>

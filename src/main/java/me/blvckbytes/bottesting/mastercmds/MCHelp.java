@@ -1,8 +1,8 @@
 package me.blvckbytes.bottesting.mastercmds;
 
 import me.blvckbytes.bottesting.BotMaster;
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 
 public class MCHelp extends MasterCommand {
 

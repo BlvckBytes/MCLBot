@@ -1,8 +1,5 @@
 package me.blvckbytes.bottesting.utils;
 
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleCallback;
-import me.blvckbytes.bottesting.SimpleLogger;
 import org.spacehq.packetlib.Client;
 import org.spacehq.packetlib.packet.Packet;
 

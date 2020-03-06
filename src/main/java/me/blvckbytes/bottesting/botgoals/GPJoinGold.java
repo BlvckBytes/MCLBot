@@ -28,5 +28,8 @@ public class GPJoinGold extends GoalPipe {
     registerGoal( new BGVectorWalk( new FullLocation( 166.5, 99, 200.6, 0, 0 ) ) );
     registerGoal( new BGVectorWalk( new FullLocation( 166.5, 98.5, 203.5, 0, 0 ) ) );
     registerGoal( new BGVectorWalk( new FullLocation( 162.2, 98.5, 203.5, 90, 5 ) ) );
+
+    // Click player
+    registerGoal( new BGPlayerClick( new FullLocation( 160.5, 99, 203.5, 0, 0 ) ) );
   }
 }

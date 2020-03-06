@@ -3,6 +3,7 @@ package me.blvckbytes.bottesting;
 import com.github.steveice10.mc.protocol.data.game.Position;
 import lombok.Getter;
 import lombok.Setter;
+import me.blvckbytes.bottesting.utils.Vec3D;
 
 public class FullLocation {
 
@@ -47,5 +48,17 @@ public class FullLocation {
    */
   public Position toPosition() {
     return new Position( ( int ) this.x, ( int ) this.y, ( int ) this.z );
+  }
+
+  /**
+   * Returns the distance to another location
+   * @return Distance as double
+   */
+  public double distTo( FullLocation other ) {
+    return Math.sqrt(
+      Math.pow( ( this.x - other.getX() ), 2 ) +
+      Math.pow( ( this.y - other.getY() ), 2 ) +
+      Math.pow( ( this.z - other.getZ() ), 2 )
+    );
   }
 }

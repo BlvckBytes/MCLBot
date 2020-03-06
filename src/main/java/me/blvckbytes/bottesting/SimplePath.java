@@ -1,6 +1,9 @@
 package me.blvckbytes.bottesting;
 
 import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlayerPositionRotationPacket;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 import org.spacehq.packetlib.Client;
 
 import java.util.ArrayList;

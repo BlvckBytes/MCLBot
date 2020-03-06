@@ -10,9 +10,12 @@ import com.github.steveice10.mc.protocol.packet.ingame.client.player.ClientPlaye
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerChatPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.ServerJoinGamePacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.entity.player.ServerPlayerPositionRotationPacket;
+import com.github.steveice10.mc.protocol.packet.ingame.server.entity.spawn.ServerSpawnPlayerPacket;
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
 import lombok.Setter;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 import me.blvckbytes.bottesting.utils.Utils;
 import org.spacehq.mc.auth.exception.request.RequestException;
 import org.spacehq.packetlib.Client;
@@ -43,6 +46,7 @@ public class MCBot {
   // Bot properties
   private boolean hasRejoined;
   private List< PacketMonitor > monitors;
+  private Map< Integer, FullLocation > players;
 
   @Getter
   private Map< Integer, ItemStack[] > currentItems;
@@ -57,6 +61,7 @@ public class MCBot {
   private MCBot() {
     this.monitors = new ArrayList<>();
     this.currentItems = new HashMap<>();
+    this.players = new HashMap<>();
     createMonitors();
   }
 
@@ -134,6 +139,22 @@ public class MCBot {
       this.currentItems.put( itemPacket.getWindowId(), itemPacket.getItems() );
     } );
     registerMonitor( itemMonitor );
+
+    // Monitor for spawning players (to cache entity ids)
+    PacketMonitor playerMonitor = new PacketMonitor( ServerSpawnPlayerPacket.class );
+    playerMonitor.setCallback( playerInfo -> {
+      ServerSpawnPlayerPacket playerPacket = ( ServerSpawnPlayerPacket ) playerInfo;
+
+      // Location and entity id to identify this player
+      int entID = playerPacket.getEntityId();
+      FullLocation position = new FullLocation(
+        playerPacket.getX(), playerPacket.getY(), playerPacket.getZ(), playerPacket.getYaw(), playerPacket.getPitch()
+      );
+
+      // Write to cache
+      this.players.put( entID, position );
+    } );
+    registerMonitor( playerMonitor );
 
     // Monitor for respawing on join to avoid issues executing commands
     PacketMonitor joinRespawnMonitor = new PacketMonitor( ServerPlayerPositionRotationPacket.class );
@@ -217,6 +238,25 @@ public class MCBot {
       // Log messages of all types
       SimpleLogger.getInst().log( "(" + chatPacket.getType() + ") " + chatPacket.getMessage(), SLLevel.GAME );
     }
+  }
+
+  /**
+   * Get a players entity id by his location
+   * @param loc Location searching for
+   * @return Entity id of player
+   */
+  public int getPlayerByLoc( FullLocation loc ) {
+    for( int entID : this.players.keySet() ) {
+      FullLocation curr = this.players.get( entID );
+      double dist = curr.distTo( loc );
+
+      // Return if distance smaller or equal to one block
+      if( dist <= 1 )
+        return entID;
+    }
+
+    // Not found
+    return -1;
   }
 
   /**

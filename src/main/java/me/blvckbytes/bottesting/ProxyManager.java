@@ -1,6 +1,8 @@
 package me.blvckbytes.bottesting;
 
-import me.blvckbytes.bottesting.utils.ProxyEntry;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SimpleRequest;
 import me.blvckbytes.bottesting.utils.Utils;
 
 import java.net.InetSocketAddress;

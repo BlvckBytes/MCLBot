@@ -2,8 +2,8 @@ package me.blvckbytes.bottesting.mastercmds;
 
 import com.github.steveice10.mc.protocol.packet.ingame.client.ClientChatPacket;
 import me.blvckbytes.bottesting.BotMaster;
-import me.blvckbytes.bottesting.SLLevel;
-import me.blvckbytes.bottesting.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
 import me.blvckbytes.bottesting.utils.Utils;
 
 public class MCChat extends MasterCommand {

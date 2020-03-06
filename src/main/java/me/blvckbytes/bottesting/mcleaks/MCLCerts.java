@@ -1,4 +1,4 @@
-package me.blvckbytes.bottesting;
+package me.blvckbytes.bottesting.mcleaks;
 
 public enum MCLCerts {
 

@@ -1,4 +1,4 @@
-package me.blvckbytes.bottesting;
+package me.blvckbytes.bottesting.utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

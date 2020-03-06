@@ -1,4 +1,4 @@
-package me.blvckbytes.bottesting.utils;
+package me.blvckbytes.bottesting;
 
 import lombok.Getter;
 

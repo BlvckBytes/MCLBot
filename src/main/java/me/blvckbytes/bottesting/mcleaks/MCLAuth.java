@@ -1,5 +1,8 @@
-package me.blvckbytes.bottesting;
+package me.blvckbytes.bottesting.mcleaks;
 
+import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleLogger;
+import me.blvckbytes.bottesting.utils.SimpleRequest;
 import org.json.JSONObject;
 
 public class MCLAuth {
