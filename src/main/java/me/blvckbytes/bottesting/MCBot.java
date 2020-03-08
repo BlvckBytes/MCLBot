@@ -14,6 +14,7 @@ import com.github.steveice10.mc.protocol.packet.ingame.server.entity.spawn.Serve
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
 import lombok.Setter;
+import me.blvckbytes.bottesting.proxies.ProxyManager;
 import me.blvckbytes.bottesting.proxies.TcpProxySessionFactory;
 import me.blvckbytes.bottesting.utils.SLLevel;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
@@ -36,8 +37,6 @@ public class MCBot {
   private BotMaster master;
   private String token;
   private String password;
-
-  private Proxy proxy = null;// new Proxy( Proxy.Type.HTTP, new InetSocketAddress( "103.37.81.92", 42420 ) );
 
   // Target server details
   private String address;
@@ -94,8 +93,7 @@ public class MCBot {
     this.address = address;
     this.port = port;
 
-    //this.proxy = master.getProxyManager().getProxy();
-    this.client = new Client( this.address, this.port, protocol, new TcpProxySessionFactory( this.proxy ) );
+    this.client = createClient( protocol );
     listen();
   }
 
@@ -122,6 +120,21 @@ public class MCBot {
 
     // Connect again with updated socket
     reconnect();
+  }
+
+  /**
+   * Central point for creating a client with given proxy, centralized because
+   * proxy creation can fail and thus I need to cycle to next one then
+   * @param protocol Protocol to apply
+   * @return Client ready to use
+   */
+  private Client createClient( MinecraftProtocol protocol ) {
+    try {
+      return new Client( this.address, this.port, protocol, new TcpProxySessionFactory( ProxyManager.getInst().getProxy() ) );
+    } catch ( Exception e ) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
   /**
@@ -327,7 +340,7 @@ public class MCBot {
     SimpleLogger.getInst().log( "Successfully authenticated with provided credentials!", SLLevel.INFO );
 
     // Create client
-    this.client = new Client( this.address, this.port, protocol, new TcpProxySessionFactory( this.proxy ) );
+    this.client = createClient( protocol );
     listen();
   }
 
@@ -348,7 +361,7 @@ public class MCBot {
   private void refresh( MinecraftProtocol protocol ) {
     try {
       MinecraftProtocol newProt = new MinecraftProtocol( protocol.getProfile(), protocol.getAccessToken(), protocol.getClientToken() );
-      this.client = new Client( this.address, this.port, newProt, new TcpProxySessionFactory( this.proxy ) );
+      this.client = createClient( newProt );
       listen();
     } catch ( Exception e ) {
       SimpleLogger.getInst().log( "Error while trying to refresh MinecraftProtocol!", SLLevel.ERROR );

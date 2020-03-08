@@ -1,6 +1,9 @@
 package me.blvckbytes.bottesting.proxies;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
 
 import java.io.InputStream;
@@ -14,24 +17,69 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProxyManager {
 
-  private Map< String, Integer > proxies;
+  private TreeMap< String, Integer > proxies;
   private List< ProxyScanner > scanners;
+  private int listIndex, subIndex;
+  private static ProxyManager inst;
+
+  @Setter @Getter
+  private boolean enabled;
 
   /**
    * Scraps all proxies off multiple webpages registered. When a proxy
    * object is requested, it cycles to the next one. Before outputting,
    * the proxy is checked so we can make sure sockets will be successful.
    */
-  public ProxyManager() {
-    this.proxies = new HashMap<>();
+  private ProxyManager() {
+    inst = this;
+    this.proxies = new TreeMap<>();
     this.scanners = new ArrayList<>();
+    this.enabled = true;
+  }
+
+  /**
+   * Begin processing, which means getting proxies and filter
+   * them out to only keep working ones
+   * @param done Callback when it's done
+   */
+  public void process( SimpleCallback< ? > done ) {
+    SimpleLogger.getInst().log( "Initialized proxy manager, scanning pages...", SLLevel.MASTER );
 
     // Register all known scanners and collect their entries
     registerScanners();
     collectEntries();
 
     // Filter out unusable proxies
-    filterUnusable();
+    filterUnusable( done );
+  }
+
+  /**
+   * Returns a proxy to use by a client. This cycles through them,
+   * going to the next entry every x calls
+   * @return Proxy ready to use
+   */
+  public Proxy getProxy() {
+    // Not enabled - don't give out proxies
+    if( !enabled )
+      return null;
+
+    // Get proxy from list
+    String address = ( String ) proxies.keySet().toArray()[ listIndex ];
+    int port = proxies.get( address );
+    subIndex++;
+
+    // Cycle next entry every 2 request
+    if( subIndex == 2 ) {
+      subIndex = 0;
+      listIndex++;
+    }
+
+    // Back to head when tail is reached
+    if( listIndex == proxies.size() )
+      listIndex = 0;
+
+    // return proxy
+    return new Proxy( Proxy.Type.HTTP, new InetSocketAddress( address, port ) );
   }
 
   /**
@@ -39,6 +87,7 @@ public class ProxyManager {
    */
   private void registerScanners() {
     this.scanners.add( new PSFreeProxyListNET() );
+    this.scanners.add( new ProxyScrapeCOM() );
   }
 
   /**
@@ -72,7 +121,7 @@ public class ProxyManager {
    * Filter out unusable proxies based on timeout and the
    * correct 200 OK response to CONNECT request
    */
-  private void filterUnusable() {
+  private void filterUnusable( SimpleCallback< ? > done ) {
     // Buffer variables to keep track of keys to remove, checked proxies aswell as percentages given
     List< String > remKeys = Collections.synchronizedList( new ArrayList<>() );
     AtomicInteger checkCounter = new AtomicInteger( 0 );
@@ -115,7 +164,11 @@ public class ProxyManager {
 
             // Terminate percentage line
             SimpleLogger.getInst().logInline( "100%\n" );
-            SimpleLogger.getInst().log( "Eliminated " + remKeys.size() + " unusable proxies!", SLLevel.MASTER );
+            SimpleLogger.getInst().log( "There are " + proxies.size() + " proxies remaining!", SLLevel.MASTER );
+
+            // Call done callback
+            if( done != null )
+              done.call( null );
           }
 
           else {
@@ -171,5 +224,16 @@ public class ProxyManager {
         return false;
       }
     };
+  }
+
+  /**
+   * Singleton instance getter of the proxy manager
+   * @return Instance
+   */
+  public static ProxyManager getInst() {
+    if( inst == null )
+      inst = new ProxyManager();
+
+    return inst;
   }
 }

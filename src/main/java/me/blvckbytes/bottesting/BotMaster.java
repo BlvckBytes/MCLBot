@@ -28,10 +28,6 @@ public class BotMaster {
   @Getter
   private ControlConsole console;
 
-  // Proxy management
-  @Getter
-  private ProxyManager proxyManager;
-
   // Registered commands
   @Getter
   private List< MasterCommand > commands;
@@ -54,26 +50,31 @@ public class BotMaster {
     this.port = port;
     this.server = server;
     this.isMCL = isMCL;
-    this.proxyManager = new ProxyManager();
 
-    // Get location for file storage
-    try {
-      URI loc = this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI();
-      this.sessPath = new File( loc ).getAbsolutePath() + "/" + "persistent_sessions.ser";
-    } catch ( Exception e ) {
-      SimpleLogger.getInst().log( "Error while trying to get the path for sess-file!", SLLevel.ERROR );
-      SimpleLogger.getInst().log( e, SLLevel.ERROR );
-    }
+    // Init proxy manager
+    ProxyManager.getInst().process( done -> {
+      // Get location for file storage
+      try {
+        URI loc = this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI();
+        this.sessPath = new File( loc ).getAbsolutePath() + "/" + "persistent_sessions.ser";
+      } catch ( Exception e ) {
+        SimpleLogger.getInst().log( "Error while trying to get the path for sess-file!", SLLevel.ERROR );
+        SimpleLogger.getInst().log( e, SLLevel.ERROR );
+      }
 
-    // Register all OOP commands
-    registerCommands();
+      // Register all OOP commands
+      registerCommands();
+
+      // Begin console with all it's features
+      begin();
+    } );
   }
 
   /**
    * Initializes the mcleaks authenticator and launches the
    * command prompt for bot controls
    */
-  public void begin() {
+  private void begin() {
     // Create authentication redirect if needed
     if( this.isMCL )
       MCLAuth.getInst().apply();
