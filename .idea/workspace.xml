@@ -7,86 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66bb59d2-7039-49b1-a540-eef7a459e3c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/ExecutionInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDoAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/HTTPProxyOioChannelFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/PSFreeProxyListNET.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpClientProxySession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpProxySessionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_Steveice10_PacketLib_f846b96.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/protlib.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/protlib.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ControlConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ControlConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyEntry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/ProxyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GoalPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/botgoals/GoalPipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDestroy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCDestroy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCHelp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCQuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCQuit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCRunPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCRunPipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCSelect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCUnselect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MCUnselect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MasterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mastercmds/MasterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mcleaks/MCLAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/mcleaks/MCLAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/RUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/RUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/BotMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/BotMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ControlConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ControlConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/FullLocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/FullLocation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCLAuth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCLCerts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/PacketMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/PacketMonitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ProxyEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/ProxyManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SLLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SimpleCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SimpleLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SimplePath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SimplePath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/SimpleRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/Vec3D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGExecuteCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGExecuteCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGHotbarMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGInvClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGInvClick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGPlayerClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGPlayerClick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGVectorWalk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BGVectorWalk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BotGoal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/BotGoal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GPJoinGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GPJoinGold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GoalPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/botgoals/GoalPipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCChat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCDestroy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCDestroy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCHand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCHand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCHelp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCHelp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCJoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCQuit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCQuit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCRunPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCRunPipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCSelect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCSelect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCTarget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCUnselect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MCUnselect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MasterCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/mastercmds/MasterCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/RUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/RUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/utils/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SimpleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/SimpleLogger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +158,8 @@
       <workItem from="1583579424376" duration="8074000" />
       <workItem from="1583602082505" duration="3902000" />
       <workItem from="1583614525402" duration="8529000" />
-      <workItem from="1583665142638" duration="3212000" />
+      <workItem from="1583665142638" duration="3359000" />
+      <workItem from="1583679168417" duration="4200000" />
     </task>
     <servers />
   </component>
@@ -257,22 +182,22 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="100" y="123" width="1720" height="818" key="DiffContextDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1583583479962" />
-    <state width="1878" height="417" key="GridCell.Tab.0.bottom" timestamp="1583668497463">
+    <state width="1878" height="362" key="GridCell.Tab.0.bottom" timestamp="1583683215249">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="417" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583668497463" />
-    <state width="1878" height="417" key="GridCell.Tab.0.center" timestamp="1583668497462">
+    <state width="1878" height="362" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583683215249" />
+    <state width="1878" height="362" key="GridCell.Tab.0.center" timestamp="1583683215248">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="417" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583668497462" />
-    <state width="1878" height="417" key="GridCell.Tab.0.left" timestamp="1583668497462">
+    <state width="1878" height="362" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583683215248" />
+    <state width="1878" height="362" key="GridCell.Tab.0.left" timestamp="1583683215248">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="417" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583668497462" />
-    <state width="1878" height="417" key="GridCell.Tab.0.right" timestamp="1583668497463">
+    <state width="1878" height="362" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583683215248" />
+    <state width="1878" height="362" key="GridCell.Tab.0.right" timestamp="1583683215249">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="417" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583668497463" />
+    <state width="1878" height="362" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583683215249" />
     <state x="498" y="194" key="Maven.ArtifactSearchDialog" timestamp="1582198192217">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>

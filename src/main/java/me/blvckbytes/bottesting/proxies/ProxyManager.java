@@ -2,17 +2,13 @@ package me.blvckbytes.bottesting.proxies;
 
 import me.blvckbytes.bottesting.utils.SLLevel;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
-import me.blvckbytes.bottesting.utils.Utils;
 
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -77,12 +73,21 @@ public class ProxyManager {
    * correct 200 OK response to CONNECT request
    */
   private void filterUnusable() {
-    List< String > remKeys = new ArrayList<>();
-    List< String > keptKeys = new ArrayList<>();
+    // Buffer variables to keep track of keys to remove, checked proxies aswell as percentages given
+    List< String > remKeys = Collections.synchronizedList( new ArrayList<>() );
+    AtomicInteger checkCounter = new AtomicInteger( 0 );
+    AtomicInteger lastPercent = new AtomicInteger( 0 );
 
+    // Begin progress tracker
+    SimpleLogger.getInst().log( "Starting to eliminate bad proxies...", SLLevel.MASTER );
+    SimpleLogger.getInst().logInlineBegin( "Status: ", SLLevel.MASTER );
+
+    // No proxies to loop, thus done
+    if( this.proxies.size() == 0 )
+      SimpleLogger.getInst().logInline( "100%\n" );
+
+    // Multithreaded proxy check, loop all proxy entries
     ExecutorService exec = Executors.newCachedThreadPool();
-    AtomicInteger counter = new AtomicInteger( 0 );
-
     for( String address : this.proxies.keySet() ) {
       int port = this.proxies.get( address );
 
@@ -91,21 +96,42 @@ public class ProxyManager {
         Future< Boolean > usable = exec.submit( checkProxy( address, port ) );
 
         try {
-          // Check if proxy is working with a given timeout
-          boolean working = usable.get( 5, TimeUnit.SECONDS );
-
-          // Already timed out
-          if( remKeys.contains( address ) || keptKeys.contains( address ) )
+          // Proxy usable, do nothing
+          if( usable.get( 5, TimeUnit.SECONDS ) )
             return;
 
-          // Add to right list, based on working state
-          ( working ? keptKeys : remKeys ).add( address );
+          // Proxy not usable, add to remove keys
+          remKeys.add( address );
         } catch ( Exception e ) {
           // Exception -> Timeout of future or general error, remove
           remKeys.add( address );
         } finally {
-          usable.cancel( true );
-          System.out.println( "STATUS: " + counter.incrementAndGet() + ", " + remKeys.size() + ", " + keptKeys.size() );
+          // Every proxy checked, counter is at size of proxy list
+          if( checkCounter.incrementAndGet() == this.proxies.size() ) {
+
+            // Remove proxies now
+            for( String remKey : remKeys )
+              this.proxies.remove( remKey );
+
+            // Terminate percentage line
+            SimpleLogger.getInst().logInline( "100%\n" );
+            SimpleLogger.getInst().log( "Eliminated " + remKeys.size() + " unusable proxies!", SLLevel.MASTER );
+          }
+
+          else {
+            // Tell percent of proxies checked
+            int currPercent = ( int ) Math.floor( 100F * ( float ) checkCounter.get() / ( float ) proxies.size() );
+            if( currPercent % 10 == 0 && currPercent != lastPercent.get() ) {
+              // Set last percent to new value
+              lastPercent.set( currPercent );
+
+              // Log new percentage
+              SimpleLogger.getInst().logInline( currPercent + "% " );
+            }
+
+            // Cancel socket checking thread
+            usable.cancel( true );
+          }
         }
       } );
     }

@@ -24,6 +24,28 @@ public class SimpleLogger {
     System.out.println( genPrefix( level ) + input );
   }
 
+  /**
+   * Logs the given message to console, but no line break is
+   * added to the end. Also appends prefix at beginning
+   * @param input What to log
+   * @param level What level to log this entry at
+   */
+  public void logInlineBegin( String input, SLLevel level ) {
+    input = input.replaceAll( "§([0-9]|[a-f]|[lnokmr])", "" );
+    System.out.print( genPrefix( level ) + input );
+  }
+
+  /**
+   * Logs the given message to console, but no line break is
+   * added to the end. No prefix is added
+   * @param input What to log
+   */
+  public void logInline( String input ) {
+    input = input.replaceAll( "§([0-9]|[a-f]|[lnokmr])", "" );
+    System.out.print( input );
+  }
+
+
   public void log( Exception e, SLLevel level ) {
     StringWriter errors = new StringWriter();
     e.printStackTrace( new PrintWriter( errors ) );
