@@ -47,7 +47,7 @@ public class GoalPipe {
 
       // Done with pipeline
       if( state == goals.size() ) {
-        SimpleLogger.getInst().log( "Successfully completed the pipeline " + name + "!", SLLevel.INFO );
+        SimpleLogger.getInst().log( "Successfully completed the pipeline " + name + " on " + dispatcher.getName() + "!", SLLevel.INFO );
         return;
       }
 

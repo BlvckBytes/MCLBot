@@ -3,6 +3,8 @@ package me.blvckbytes.bottesting.utils;
 import org.spacehq.packetlib.Client;
 import org.spacehq.packetlib.packet.Packet;
 
+import java.util.TimerTask;
+
 public class Utils {
 
   /**
@@ -118,5 +120,20 @@ public class Utils {
    */
   public static String stripColor( String input ) {
     return input.replaceAll( "§.", "" );
+  }
+
+  /**
+   * Wrapper for a lambda expression to be used with timer task
+   * @param r Runnable (lambda function)
+   * @return TimerTask
+   */
+  public static TimerTask wrapTimer( Runnable r ) {
+    return new TimerTask() {
+
+      @Override
+      public void run() {
+        r.run();
+      }
+    };
   }
 }

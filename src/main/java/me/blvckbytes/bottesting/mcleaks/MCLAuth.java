@@ -34,8 +34,10 @@ public class MCLAuth {
    * Appand redirect to hosts file
    */
   private void applyRedirect() {
-    execCommand( "echo \"" + this.currIP + " sessionserver.mojang.com\" | sudo tee -a /etc/hosts" );
-    execCommand( "echo \"" + this.currIP + " authserver.mojang.com\" | sudo tee -a /etc/hosts" );
+    execCommand(
+     "echo \"" + this.currIP + " sessionserver.mojang.com\" | sudo tee -a /etc/hosts && " +
+     "echo \"" + this.currIP + " authserver.mojang.com\" | sudo tee -a /etc/hosts"
+    );
     SimpleLogger.getInst().log( "Applied mojang REST redirect to MCLeaks!", SLLevel.INFO );
   }
 

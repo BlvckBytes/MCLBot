@@ -3,3 +3,6 @@
 .classpath
 .project
 .directory
+target/
+*.iml
+.idea

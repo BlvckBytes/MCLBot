@@ -4,6 +4,7 @@ import com.github.steveice10.mc.protocol.MinecraftProtocol;
 import lombok.Getter;
 import me.blvckbytes.bottesting.mastercmds.*;
 import me.blvckbytes.bottesting.mcleaks.MCLAuth;
+import me.blvckbytes.bottesting.proxies.ProxyManager;
 import me.blvckbytes.bottesting.utils.SLLevel;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
 import org.spacehq.mc.auth.data.GameProfile;
@@ -22,6 +23,10 @@ public class BotMaster {
   public MCBot currSel;
   private boolean isMCL;
   private String sessPath;
+
+  // Input console
+  @Getter
+  private ControlConsole console;
 
   // Proxy management
   @Getter
@@ -49,7 +54,7 @@ public class BotMaster {
     this.port = port;
     this.server = server;
     this.isMCL = isMCL;
-    this.proxyManager = new ProxyManager( "https://www.socks-proxy.net/" );
+    this.proxyManager = new ProxyManager();
 
     // Get location for file storage
     try {
@@ -226,17 +231,18 @@ public class BotMaster {
     this.commands.add( new MCTarget( this ) );
     this.commands.add( new MCRunPipe( this ) );
     this.commands.add( new MCHand( this ) );
+    this.commands.add( new MCDoAll( this ) );
   }
 
   /**
    * Begin to listen for commands and dispatch them
    */
   private void beginConsole() {
-    new ControlConsole( input -> {
+    this.console = new ControlConsole( input -> {
 
       try {
 
-        String[] parts = input.split( " " );
+        String[] parts = input.getCommand().split( " " );
 
         // Search for applicable command
         boolean found = false;
@@ -245,8 +251,13 @@ public class BotMaster {
             continue;
 
           // Don't allow subterminal commands to be executed in main prompt
-          if( mc.isSubterminal && this.currSel == null ) {
+          if( mc.isSubterminal && ( this.currSel == null && !input.isIgnoreSelect() ) ) {
             SimpleLogger.getInst().log( "The " + mc.command + " command is only usable in the subterminal!", SLLevel.WARNING );
+          }
+
+          // Don't allow doall on commands that don't support this
+          else if( !mc.isDoAllCapable && input.isIgnoreSelect() ) {
+            SimpleLogger.getInst().log( "The " + mc.command + " command is not capable of a doall!", SLLevel.WARNING );
           }
 
           // Call command with args array
@@ -259,7 +270,7 @@ public class BotMaster {
             }
 
             // Pass args to command
-            mc.call( args );
+            mc.call( args, input.isIgnoreSelect() );
           }
 
           // Proper command found, stop

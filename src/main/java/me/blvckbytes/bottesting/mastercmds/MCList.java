@@ -9,13 +9,13 @@ public class MCList extends MasterCommand {
 
   public MCList( BotMaster master ) {
     super(
-      "list", master, false,
+      "list", master, false, false,
       "Display all registered bots"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     SimpleLogger.getInst().log( "The following bots are available:", SLLevel.MASTER );
 
     // List all bots

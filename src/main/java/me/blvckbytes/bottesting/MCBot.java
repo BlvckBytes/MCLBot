@@ -14,6 +14,7 @@ import com.github.steveice10.mc.protocol.packet.ingame.server.entity.spawn.Serve
 import com.github.steveice10.mc.protocol.packet.ingame.server.window.ServerWindowItemsPacket;
 import lombok.Getter;
 import lombok.Setter;
+import me.blvckbytes.bottesting.proxies.TcpProxySessionFactory;
 import me.blvckbytes.bottesting.utils.SLLevel;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
 import me.blvckbytes.bottesting.utils.Utils;
@@ -23,7 +24,6 @@ import org.spacehq.packetlib.event.session.DisconnectedEvent;
 import org.spacehq.packetlib.event.session.PacketReceivedEvent;
 import org.spacehq.packetlib.event.session.SessionAdapter;
 import org.spacehq.packetlib.packet.Packet;
-import org.spacehq.packetlib.tcp.TcpSessionFactory;
 
 import java.net.Proxy;
 import java.util.*;
@@ -37,14 +37,13 @@ public class MCBot {
   private String token;
   private String password;
 
-  private Proxy proxy = Proxy.NO_PROXY;// new Proxy( Proxy.Type.HTTP, new InetSocketAddress( "178.128.118.193", 44321 ) );
+  private Proxy proxy = null;// new Proxy( Proxy.Type.HTTP, new InetSocketAddress( "103.37.81.92", 42420 ) );
 
   // Target server details
   private String address;
   private int port;
 
   // Bot properties
-  private boolean hasRejoined;
   private List< PacketMonitor > monitors;
   private Map< Integer, FullLocation > players;
 
@@ -80,8 +79,6 @@ public class MCBot {
     this.port = port;
     this.master = master;
     this.password = password;
-
-    // this.proxy = master.getProxyManager().getProxy();
   }
 
   /**
@@ -98,7 +95,7 @@ public class MCBot {
     this.port = port;
 
     //this.proxy = master.getProxyManager().getProxy();
-    this.client = new Client( this.address, this.port, protocol, new TcpSessionFactory( this.proxy ) );
+    this.client = new Client( this.address, this.port, protocol, new TcpProxySessionFactory( this.proxy ) );
     listen();
   }
 
@@ -330,7 +327,7 @@ public class MCBot {
     SimpleLogger.getInst().log( "Successfully authenticated with provided credentials!", SLLevel.INFO );
 
     // Create client
-    this.client = new Client( this.address, this.port, protocol, new TcpSessionFactory( this.proxy ) );
+    this.client = new Client( this.address, this.port, protocol, new TcpProxySessionFactory( this.proxy ) );
     listen();
   }
 
@@ -338,7 +335,6 @@ public class MCBot {
    * Reconnects to the target server
    */
   public void reconnect() {
-    this.hasRejoined = true;
     refresh( ( MinecraftProtocol ) getClient().getPacketProtocol() );
     getClient().getSession().connect();
   }
@@ -352,7 +348,7 @@ public class MCBot {
   private void refresh( MinecraftProtocol protocol ) {
     try {
       MinecraftProtocol newProt = new MinecraftProtocol( protocol.getProfile(), protocol.getAccessToken(), protocol.getClientToken() );
-      this.client = new Client( this.address, this.port, newProt, new TcpSessionFactory( this.proxy ) );
+      this.client = new Client( this.address, this.port, newProt, new TcpProxySessionFactory( this.proxy ) );
       listen();
     } catch ( Exception e ) {
       SimpleLogger.getInst().log( "Error while trying to refresh MinecraftProtocol!", SLLevel.ERROR );
@@ -376,17 +372,6 @@ public class MCBot {
       public void disconnected( DisconnectedEvent event ) {
         String reason = Message.fromString( event.getReason() ).getFullText();
         SimpleLogger.getInst().log( "Disconnected: " + reason, SLLevel.WARNING );
-
-        // Detect issues on the first join attempt and try to fix them by performing a rejoin
-        if( reason.toLowerCase().contains( "exception" ) && !hasRejoined ) {
-          SimpleLogger.getInst().log( "Detected bot firstjoin issue, performing rejoin delayed by 2s!", SLLevel.INFO );
-          hasRejoined = true;
-
-          // Perform delayed rejoin
-          Utils.delayExec( func -> {
-            reconnect();
-          }, 2000 );
-        }
 
         // Print cause if exists aswell
         if( event.getCause() != null )

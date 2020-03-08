@@ -10,13 +10,13 @@ public class MCRunPipe extends MasterCommand {
 
   public MCRunPipe( BotMaster master ) {
     super(
-      "runpipe", master, true,
+      "runpipe", master, true, true,
       "Tries to instantiate the goal and execute it"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     // Argument mismatch
     if( args.length != 1 ) {
       SimpleLogger.getInst().log( "Usage: runpipe <ClassName>", SLLevel.MASTER );
@@ -27,6 +27,15 @@ public class MCRunPipe extends MasterCommand {
     try {
       // Load class of pipe
       Class< ? > target = Class.forName( "me.blvckbytes.bottesting.botgoals." + className );
+
+      if( ignoreSelect ) {
+        for( MCBot bot : master.getBots() ) {
+          GoalPipe pipe = ( GoalPipe ) target.getConstructor( MCBot.class ).newInstance( bot );
+          pipe.execute();
+        }
+        SimpleLogger.getInst().log( "Sent pipe instruction " + className + " to all bots!", SLLevel.MASTER );
+        return;
+      }
 
       // Instantiate pipe and execute
       GoalPipe pipe = ( GoalPipe ) target.getConstructor( MCBot.class ).newInstance( master.currSel );

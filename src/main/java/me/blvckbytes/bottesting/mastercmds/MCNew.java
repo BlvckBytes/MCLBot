@@ -8,13 +8,13 @@ public class MCNew extends MasterCommand {
 
   public MCNew( BotMaster master ) {
     super(
-      "new", master, false,
+      "new", master, false, false,
       "Register a new bot in the master"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     // No message provided
     if( args.length != 1 ) {
       SimpleLogger.getInst().log( "Usage: new <credentials>", SLLevel.MASTER );

@@ -8,13 +8,13 @@ public class MCUnselect extends MasterCommand {
 
   public MCUnselect( BotMaster master ) {
     super(
-      "unselect", master, false,
+      "unselect", master, false, false,
       "Leave a bot's subterminal"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     // No bot selected
     if( master.currSel == null ) {
       SimpleLogger.getInst().log( "No bot currently selected!", SLLevel.MASTER );

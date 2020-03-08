@@ -9,13 +9,13 @@ public class MCTarget extends MasterCommand {
 
   public MCTarget( BotMaster master ) {
     super(
-      "target", master, false,
+      "target", master, false, false,
       "Change target server of the master"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     // Either one or two argumentts
     if( !( args.length <= 2 && args.length != 0 ) ) {
       SimpleLogger.getInst().log( "Usage: target <ip/domain> [port]", SLLevel.MASTER );

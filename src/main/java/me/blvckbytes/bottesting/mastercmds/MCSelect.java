@@ -9,13 +9,13 @@ public class MCSelect extends MasterCommand {
 
   public MCSelect( BotMaster master ) {
     super(
-      "select", master, false,
+      "select", master, false, false,
       "Select a bot from the list"
     );
   }
 
   @Override
-  public void call( String[] args ) {
+  public void call( String[] args, boolean ignoreSelect ) {
     // ID parameter missing
     if( args.length != 1 ) {
       SimpleLogger.getInst().log( "Usage: select <id>", SLLevel.MASTER );

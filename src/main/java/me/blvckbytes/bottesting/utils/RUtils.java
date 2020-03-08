@@ -61,4 +61,22 @@ public class RUtils {
       return null;
     }
   }
+
+  /**
+   * Search a fields value by name in a class recursively
+   * @param target Target class
+   * @param name Name of the field
+   * @param holder Instance to get from
+   * @return Value of that field as object
+   */
+  public static Object findValue( Class< ? > target, String name, Object holder ) {
+    try {
+      Field targetField = findField( target, name );
+      return targetField.get( holder );
+    } catch ( Exception e ) {
+      SimpleLogger.getInst().log( "Error while trying to get a value from a field using reflect!", SLLevel.ERROR );
+      SimpleLogger.getInst().log( e, SLLevel.ERROR );
+      return null;
+    }
+  }
 }
