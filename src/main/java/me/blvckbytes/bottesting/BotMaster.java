@@ -171,7 +171,7 @@ public class BotMaster {
           loaded++;
         } catch ( Exception e ) {
           SimpleLogger.getInst().log( "Could not load a bot from file!", SLLevel.ERROR );
-          SimpleLogger.getInst().log( e.getMessage(), SLLevel.ERROR );
+          SimpleLogger.getInst().log( e, SLLevel.ERROR );
         }
       }
 

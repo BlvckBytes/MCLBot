@@ -1,10 +1,10 @@
 package me.blvckbytes.bottesting.proxies;
 
+import com.google.gson.JsonObject;
 import lombok.Getter;
 import lombok.Setter;
-import me.blvckbytes.bottesting.utils.SLLevel;
-import me.blvckbytes.bottesting.utils.SimpleCallback;
-import me.blvckbytes.bottesting.utils.SimpleLogger;
+import me.blvckbytes.bottesting.utils.*;
+import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.net.InetSocketAddress;
@@ -17,9 +17,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProxyManager {
 
-  private TreeMap< String, Integer > proxies;
+  private TreeMap< String, HttpProxy > proxies;
   private List< ProxyScanner > scanners;
-  private int listIndex, subIndex;
+  private int listIndex;
   private static ProxyManager inst;
 
   @Setter @Getter
@@ -45,41 +45,89 @@ public class ProxyManager {
   public void process( SimpleCallback< ? > done ) {
     SimpleLogger.getInst().log( "Initialized proxy manager, scanning pages...", SLLevel.MASTER );
 
+    // Collect all bought proxies from austria (latency matters here...)
+    collectBought( new String[]{ "at" } );
+    done.call( null );
+
+    // NOTE: Public proxies SUCK, thus I started using bought ones.
+    // Still, I don't want to delete this, since it may be useful in other projects.
+
     // Register all known scanners and collect their entries
-    registerScanners();
-    collectEntries();
+    // registerScanners();
+    // collectEntries();
 
     // Filter out unusable proxies
-    filterUnusable( done );
+    // filterUnusable( done );
+  }
+
+  /**
+   * Collect all proxy entries from premium proxy page (bought ones)
+   * @param allowedCountries Array of country names to allow
+   */
+  private void collectBought( String[] allowedCountries ) {
+    try {
+      // Get country signs into usable data type
+      List< String > countrySigns = Arrays.asList( allowedCountries );
+
+      // Get needed api values from config
+      Properties apiConf = PropConfig.getInstance().getProps();
+
+      // Get response from api
+      String url = String.format( "%s?apikey=%s&method=getproxy&params=", apiConf.getProperty( "apiurl" ), apiConf.getProperty( "apitoken" ) );
+      JSONObject resp = new JSONObject( new SimpleRequest( url, "GET" ).call( null ) );
+      JSONObject list = ( JSONObject ) resp.get( "list" );
+
+      // Loop proxy entries by ID
+      for( String proxyID : list.keySet() ) {
+        JSONObject proxyEntry = ( JSONObject ) list.get( proxyID );
+
+        // Country filter active and country mismatch
+        if( countrySigns.size() != 0 && !countrySigns.contains( proxyEntry.getString( "country" ) ) )
+          continue;
+
+        // Get needed data
+        String ip = proxyEntry.getString( "host" );
+        int port = proxyEntry.getInt( "port" );
+        String user = proxyEntry.getString( "user" );
+        String pass = proxyEntry.getString( "pass" );
+
+        // Cache
+        this.proxies.put( ip, new HttpProxy( ip, port, user, pass ) );
+      }
+
+    } catch ( Exception e ) {
+      SimpleLogger.getInst().log( "Could not load proxies from paid api!", SLLevel.ERROR );
+      SimpleLogger.getInst().log( e, SLLevel.ERROR );
+    }
+
+    SimpleLogger.getInst().log( "Got " + this.proxies.size() + " bought proxy entries from api!", SLLevel.MASTER );
   }
 
   /**
    * Returns a proxy to use by a client. This cycles through them,
-   * going to the next entry every x calls
-   * @return Proxy ready to use
+   * going to the next entry every call
+   * @return Proxy data ready to use
    */
-  public Proxy getProxy() {
+  public HttpProxy getProxy() {
     // Not enabled - don't give out proxies
     if( !enabled )
       return null;
 
+    // No proxy in store
+    if( this.proxies.size() == 0 )
+      return null;
+
     // Get proxy from list
     String address = ( String ) proxies.keySet().toArray()[ listIndex ];
-    int port = proxies.get( address );
-    subIndex++;
-
-    // Cycle next entry every 2 request
-    if( subIndex == 2 ) {
-      subIndex = 0;
-      listIndex++;
-    }
+    HttpProxy proxy = proxies.get( address );
+    listIndex++;
 
     // Back to head when tail is reached
     if( listIndex == proxies.size() )
       listIndex = 0;
 
     // return proxy
-    return new Proxy( Proxy.Type.HTTP, new InetSocketAddress( address, port ) );
+    return proxy;
   }
 
   /**
@@ -87,7 +135,7 @@ public class ProxyManager {
    */
   private void registerScanners() {
     this.scanners.add( new PSFreeProxyListNET() );
-    this.scanners.add( new ProxyScrapeCOM() );
+    this.scanners.add( new PSProxyScrapeCOM() );
   }
 
   /**
@@ -109,7 +157,7 @@ public class ProxyManager {
           continue;
 
         // Add to cache
-        this.proxies.put( addr, addrInfo.getPort() );
+        this.proxies.put( addr, new HttpProxy( addr, addrInfo.getPort() ) );
       }
     }
 
@@ -138,7 +186,7 @@ public class ProxyManager {
     // Multithreaded proxy check, loop all proxy entries
     ExecutorService exec = Executors.newCachedThreadPool();
     for( String address : this.proxies.keySet() ) {
-      int port = this.proxies.get( address );
+      int port = this.proxies.get( address ).getPort();
 
       // Every socket check gets it's own thread
       exec.execute( () -> {

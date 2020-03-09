@@ -26,7 +26,6 @@ import org.spacehq.packetlib.event.session.PacketReceivedEvent;
 import org.spacehq.packetlib.event.session.SessionAdapter;
 import org.spacehq.packetlib.packet.Packet;
 
-import java.net.Proxy;
 import java.util.*;
 
 public class MCBot {
@@ -132,7 +131,8 @@ public class MCBot {
     try {
       return new Client( this.address, this.port, protocol, new TcpProxySessionFactory( ProxyManager.getInst().getProxy() ) );
     } catch ( Exception e ) {
-      e.printStackTrace();
+      SimpleLogger.getInst().log( "Could not create client for MCBot!", SLLevel.ERROR );
+      SimpleLogger.getInst().log( e, SLLevel.ERROR );
       return null;
     }
   }
@@ -385,6 +385,13 @@ public class MCBot {
       public void disconnected( DisconnectedEvent event ) {
         String reason = Message.fromString( event.getReason() ).getFullText();
         SimpleLogger.getInst().log( "Disconnected: " + reason, SLLevel.WARNING );
+
+        // Auto-rejoin on timeout
+        if( reason.contains( "timed out" ) ) {
+          SimpleLogger.getInst().log( "Timeout detected, performing rejoin!", SLLevel.WARNING );
+          reconnect();
+          return;
+        }
 
         // Print cause if exists aswell
         if( event.getCause() != null )

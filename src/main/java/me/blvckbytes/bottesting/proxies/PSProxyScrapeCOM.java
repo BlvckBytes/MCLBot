@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProxyScrapeCOM implements ProxyScanner {
+public class PSProxyScrapeCOM implements ProxyScanner {
 
   @Override
   public List< Proxy > yieldResults() {

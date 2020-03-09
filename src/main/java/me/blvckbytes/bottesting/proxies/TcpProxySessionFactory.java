@@ -12,16 +12,14 @@ import java.net.Proxy;
 
 public class TcpProxySessionFactory extends TcpSessionFactory {
 
+  private HttpProxy proxy;
+
   /**
    * Creates a new session factory for use with http proxies
    * @param clientProxy HTTP proxy to use
    */
-  public TcpProxySessionFactory( Proxy clientProxy ) {
-    super( clientProxy );
-
-    // Notify of wrong proxy type
-    if( clientProxy != null && !clientProxy.type().equals( Proxy.Type.HTTP ) )
-      SimpleLogger.getInst().log( "Tried to use a non-http proxy with factory, this won't work!", SLLevel.ERROR );
+  public TcpProxySessionFactory( HttpProxy clientProxy ) {
+    this.proxy = clientProxy;
   }
 
   /**
@@ -31,14 +29,11 @@ public class TcpProxySessionFactory extends TcpSessionFactory {
    */
   @Override
   public Session createClientSession( Client client ) {
-    // Find proxy field from superclass
-    Proxy clientProxy = ( Proxy ) RUtils.findValue( this.getClass(), "clientProxy", this );
-
     // No proxy specified
-    if( clientProxy == null )
+    if( proxy == null )
       return new TcpClientSession( client.getHost(), client.getPort(), client.getPacketProtocol(), client, null );
 
     // Open HTTP proxy
-    return new TcpClientProxySession( client.getHost(), client.getPort(), client.getPacketProtocol(), client, clientProxy );
+    return new TcpClientProxySession( client.getHost(), client.getPort(), client.getPacketProtocol(), client, proxy );
   }
 }

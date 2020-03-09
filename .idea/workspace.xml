@@ -7,18 +7,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66bb59d2-7039-49b1-a540-eef7a459e3c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyScrapeCOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/HttpProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/HttpProxyOioChannelFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils/PropConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/protlib.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/protlib.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/BotMaster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/MCBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/HTTPProxyOioChannelFactory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/ProxyScrapeCOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/PSProxyScrapeCOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpClientProxySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpClientProxySession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpProxySessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/proxies/TcpProxySessionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/BotMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/BotMaster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/MCBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/blvckbytes/bottesting/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistent_sessions.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="241" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="mcprotocollib" />
@@ -69,11 +99,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/github/steveice10/mc/protocol" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.blvckbytes.bottesting.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/me/blvckbytes/bottesting/utils" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -162,7 +195,11 @@
       <workItem from="1583602082505" duration="3902000" />
       <workItem from="1583614525402" duration="8529000" />
       <workItem from="1583665142638" duration="3359000" />
-      <workItem from="1583679168417" duration="7914000" />
+      <workItem from="1583679168417" duration="10326000" />
+      <workItem from="1583743436648" duration="3179000" />
+      <workItem from="1583785396372" duration="26000" />
+      <workItem from="1583785449419" duration="2261000" />
+      <workItem from="1583794309483" duration="1850000" />
     </task>
     <servers />
   </component>
@@ -181,26 +218,30 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="700" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1018@0.23.1920.1018" timestamp="1583684516521" />
+    <state x="648" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583785415101">
+      <screen x="0" y="23" width="1920" height="1018" />
+    </state>
+    <state x="648" y="275" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1583785415101" />
     <state x="100" y="123" width="1720" height="818" key="DiffContextDialog" timestamp="1583583479962">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="100" y="123" width="1720" height="818" key="DiffContextDialog/0.23.1920.1018@0.23.1920.1018" timestamp="1583583479962" />
-    <state width="1878" height="421" key="GridCell.Tab.0.bottom" timestamp="1583694820411">
+    <state width="1878" height="390" key="GridCell.Tab.0.bottom" timestamp="1583796105981">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="421" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583694820411" />
-    <state width="1878" height="421" key="GridCell.Tab.0.center" timestamp="1583694820410">
+    <state width="1878" height="390" key="GridCell.Tab.0.bottom/0.23.1920.1018@0.23.1920.1018" timestamp="1583796105981" />
+    <state width="1878" height="390" key="GridCell.Tab.0.center" timestamp="1583796105979">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="421" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583694820410" />
-    <state width="1878" height="421" key="GridCell.Tab.0.left" timestamp="1583694820409">
+    <state width="1878" height="390" key="GridCell.Tab.0.center/0.23.1920.1018@0.23.1920.1018" timestamp="1583796105979" />
+    <state width="1878" height="390" key="GridCell.Tab.0.left" timestamp="1583796105978">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="421" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583694820409" />
-    <state width="1878" height="421" key="GridCell.Tab.0.right" timestamp="1583694820410">
+    <state width="1878" height="390" key="GridCell.Tab.0.left/0.23.1920.1018@0.23.1920.1018" timestamp="1583796105978" />
+    <state width="1878" height="390" key="GridCell.Tab.0.right" timestamp="1583796105980">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state width="1878" height="421" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583694820410" />
+    <state width="1878" height="390" key="GridCell.Tab.0.right/0.23.1920.1018@0.23.1920.1018" timestamp="1583796105980" />
     <state x="498" y="194" key="Maven.ArtifactSearchDialog" timestamp="1582198192217">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
@@ -225,10 +266,10 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="743" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1018@0.23.1920.1018" timestamp="1583421534950" />
-    <state x="618" y="289" width="817" height="486" key="find.popup" timestamp="1583694574061">
+    <state x="618" y="289" width="817" height="486" key="find.popup" timestamp="1583743778917">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state x="618" y="289" width="817" height="486" key="find.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583694574061" />
+    <state x="618" y="289" width="817" height="486" key="find.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583743778917" />
     <state x="337" y="229" key="new project wizard" timestamp="1582339542314">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
@@ -237,9 +278,14 @@
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
     <state x="625" y="246" key="run.anything.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583418839792" />
-    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1583667611534">
+    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1583795592032">
       <screen x="0" y="23" width="1920" height="1018" />
     </state>
-    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583667611534" />
+    <state x="625" y="183" width="670" height="676" key="search.everywhere.popup/0.23.1920.1018@0.23.1920.1018" timestamp="1583795592032" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mcprotocollib$Main.ic" NAME="Main Coverage Results" MODIFIED="1583745232840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>me.blvckbytes.bottesting.proxies.*</FILTER>
+    </SUITE>
   </component>
 </project>

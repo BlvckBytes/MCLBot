@@ -2,6 +2,7 @@
 .settings
 .classpath
 .project
+configuration.properties
 .directory
 target/
 *.iml

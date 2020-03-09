@@ -4,6 +4,6 @@ public class Main {
 
   public static void main( String[] args ) {
     // Initialize a master
-     BotMaster master = new BotMaster( "176.31.11.108", 25565, false );
+    BotMaster master = new BotMaster( "45.88.108.124", 25565, true );
   }
 }

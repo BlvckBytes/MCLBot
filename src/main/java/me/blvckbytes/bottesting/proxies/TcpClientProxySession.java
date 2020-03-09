@@ -7,15 +7,16 @@ import io.netty.util.concurrent.Future;
 import me.blvckbytes.bottesting.utils.RUtils;
 import org.spacehq.packetlib.Client;
 import org.spacehq.packetlib.packet.PacketProtocol;
-import org.spacehq.packetlib.tcp.*;
-
-import java.net.Proxy;
+import org.spacehq.packetlib.tcp.TcpPacketCodec;
+import org.spacehq.packetlib.tcp.TcpPacketEncryptor;
+import org.spacehq.packetlib.tcp.TcpPacketSizer;
+import org.spacehq.packetlib.tcp.TcpSession;
 
 public class TcpClientProxySession extends TcpSession {
 
   private TcpClientProxySession inst;
   private Client client;
-  private Proxy proxy;
+  private HttpProxy proxy;
   private EventLoopGroup group;
 
   /**
@@ -26,7 +27,7 @@ public class TcpClientProxySession extends TcpSession {
    * @param client Client to use
    * @param proxy Proxy to apply
    */
-  public TcpClientProxySession( String host, int port, PacketProtocol protocol, Client client, Proxy proxy ) {
+  public TcpClientProxySession( String host, int port, PacketProtocol protocol, Client client, HttpProxy proxy ) {
     super( host, port, protocol );
 
     this.client = client;
@@ -57,7 +58,7 @@ public class TcpClientProxySession extends TcpSession {
 
       // Pass custom channel factory
       this.group = new OioEventLoopGroup();
-      bootstrap.channelFactory( new HTTPProxyOioChannelFactory( this.proxy, this.getHost(), this.getPort() ) );
+      bootstrap.channelFactory( new HttpProxyOioChannelFactory( this.proxy, this.getHost(), this.getPort() ) );
 
       // Set channel initializer
       ( bootstrap.handler( new ChannelInitializer< Channel > () {
