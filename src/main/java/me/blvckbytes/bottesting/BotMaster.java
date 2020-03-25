@@ -56,7 +56,9 @@ public class BotMaster {
       // Get location for file storage
       try {
         URI loc = this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI();
-        this.sessPath = new File( loc ).getAbsolutePath() + "/" + "persistent_sessions.ser";
+        String basePath = new File( loc ).getAbsolutePath();
+        basePath = basePath.substring( 0, basePath.lastIndexOf( "/" ) );
+        this.sessPath = basePath + "/" + "persistent_sessions.ser";
       } catch ( Exception e ) {
         SimpleLogger.getInst().log( "Error while trying to get the path for sess-file!", SLLevel.ERROR );
         SimpleLogger.getInst().log( e, SLLevel.ERROR );
@@ -143,10 +145,11 @@ public class BotMaster {
    */
   private void loadSessions() {
     try {
+      System.out.println( "SESSPATH: " + sessPath );
       File f = new File( sessPath );
 
       // Create if non existent
-      if( !f.exists() && !f.createNewFile() ) {
+      if( !f.exists() && !f.getParentFile().mkdirs() && !f.createNewFile() ) {
         SimpleLogger.getInst().log( "It seems like session file path is not writable! Cancelling...", SLLevel.ERROR );
         return;
       }

@@ -38,6 +38,6 @@ public class BGPlayerClick extends BotGoal {
     dispatcher.getClient().getSession().send(
       new ClientPlayerInteractEntityPacket( targetID, InteractAction.INTERACT_AT )
     );
-    done.call( null );
+    done.call( new GoalResult( null ) );
   }
 }

@@ -55,10 +55,13 @@ public class HttpProxyOioChannelFactory implements ChannelFactory< OioSocketChan
       return new OioSocketChannel( sock );
     } catch ( Exception e ) {
       SimpleLogger.getInst().log( "Error with proxy, grabbing a new one!", SLLevel.MASTER );
+      SimpleLogger.getInst().log( e, SLLevel.MASTER );
 
+      // Cancel if existing
       if( usable != null )
         usable.cancel( true );
 
+      // Get new proxy and call again
       this.proxy = ProxyManager.getInst().getProxy();
       return newChannel();
     }

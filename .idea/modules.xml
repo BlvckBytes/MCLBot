@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mcprotocollib.iml" filepath="$PROJECT_DIR$/mcprotocollib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BotMaster.iml" filepath="$PROJECT_DIR$/BotMaster.iml" />
     </modules>
   </component>
 </project>

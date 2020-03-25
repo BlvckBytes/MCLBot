@@ -1,6 +1,5 @@
 package me.blvckbytes.bottesting.proxies;
 
-import com.google.gson.JsonObject;
 import lombok.Getter;
 import lombok.Setter;
 import me.blvckbytes.bottesting.utils.*;
@@ -74,7 +73,13 @@ public class ProxyManager {
 
       // Get response from api
       String url = String.format( "%s?apikey=%s&method=getproxy&params=", apiConf.getProperty( "apiurl" ), apiConf.getProperty( "apitoken" ) );
-      JSONObject resp = new JSONObject( new SimpleRequest( url, "GET" ).call( null ) );
+      String srvResponse = new SimpleRequest( url, "GET" ).call( null );
+      JSONObject resp = new JSONObject( srvResponse );
+
+      // API problems, notify user
+      if( !resp.has( "list" ) )
+        throw new Exception( "Error while retrieving data from ProxyAPI: " + srvResponse );
+
       JSONObject list = ( JSONObject ) resp.get( "list" );
 
       // Loop proxy entries by ID

@@ -39,7 +39,8 @@ public class PropConfig {
       if( is != null )
         is.close();
     } catch( Exception e ) {
-      e.printStackTrace();
+      SimpleLogger.getInst().log( "Error while loading PropConfig! Is the file existent (it's part of gitignore)?", SLLevel.ERROR );
+      SimpleLogger.getInst().log( e, SLLevel.ERROR );
     }
   }
 
@@ -77,6 +78,4 @@ public class PropConfig {
 
     return inst;
   }
-
-
 }

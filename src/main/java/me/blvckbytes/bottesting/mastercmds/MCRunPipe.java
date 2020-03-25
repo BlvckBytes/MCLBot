@@ -3,8 +3,11 @@ package me.blvckbytes.bottesting.mastercmds;
 import me.blvckbytes.bottesting.BotMaster;
 import me.blvckbytes.bottesting.MCBot;
 import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
 import me.blvckbytes.bottesting.botgoals.GoalPipe;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MCRunPipe extends MasterCommand {
 
@@ -29,17 +32,23 @@ public class MCRunPipe extends MasterCommand {
       Class< ? > target = Class.forName( "me.blvckbytes.bottesting.botgoals." + className );
 
       if( ignoreSelect ) {
+
+        // TODO: Think about a way to delay the loop based on done callback
         for( MCBot bot : master.getBots() ) {
           GoalPipe pipe = ( GoalPipe ) target.getConstructor( MCBot.class ).newInstance( bot );
-          pipe.execute();
+
+          pipe.execute( done -> {
+
+          } );
         }
+
         SimpleLogger.getInst().log( "Sent pipe instruction " + className + " to all bots!", SLLevel.MASTER );
         return;
       }
 
       // Instantiate pipe and execute
       GoalPipe pipe = ( GoalPipe ) target.getConstructor( MCBot.class ).newInstance( master.currSel );
-      pipe.execute();
+      pipe.execute( null );
     }
 
     // Class not found, thus pipe not existent

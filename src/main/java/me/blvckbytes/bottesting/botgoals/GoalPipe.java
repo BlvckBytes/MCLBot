@@ -2,6 +2,7 @@ package me.blvckbytes.bottesting.botgoals;
 
 import me.blvckbytes.bottesting.MCBot;
 import me.blvckbytes.bottesting.utils.SLLevel;
+import me.blvckbytes.bottesting.utils.SimpleCallback;
 import me.blvckbytes.bottesting.utils.SimpleLogger;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class GoalPipe {
   /**
    * Execute pipeline recursively
    */
-  public void execute() {
+  public void execute( SimpleCallback< ? > complete ) {
     try {
       // Empty pipe, stop
       if( goals.size() == 0 )
@@ -48,6 +49,10 @@ public class GoalPipe {
       // Done with pipeline
       if( state == goals.size() ) {
         SimpleLogger.getInst().log( "Successfully completed the pipeline " + name + " on " + dispatcher.getName() + "!", SLLevel.INFO );
+
+        if( complete != null )
+          complete.call( null );
+
         return;
       }
 
@@ -61,14 +66,22 @@ public class GoalPipe {
           // Stop recursion on errors in a pipe goal
           if( done.error != null ) {
             SimpleLogger.getInst().log( "Error in pipeline: " + done.error, SLLevel.ERROR );
+
+            if( complete != null )
+              complete.call( null );
+
             return;
           }
+
+          // Print out stage completeness
+          String goalName = goals.get( state ).name;
+          SimpleLogger.getInst().log( "Stage " + goalName + " done on " + this.dispatcher.getName() + "!", SLLevel.INFO );
 
           // Launch next delayed
           try {
             Thread.sleep( 600 );
             state++;
-            execute();
+            execute( complete );
           } catch ( Exception e ) {
             e.printStackTrace();
           }
