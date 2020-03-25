@@ -4,3 +4,6 @@ A bot master controlling mcleaks bot slaves. It offers a command prompt and save
 # Library
 Huge thanks go out to Steveice10 for writing the awesome library MCProtocolLib! Visit his repo: [MCProtocolLib by Steveice10](https://github.com/Steveice10/MCProtocolLib)
 Of course, i do NOT own any of the code contained in his original package. I've added my own, so you can distinguish that. Since I like to debug and modify at any time, I just directly code in this project and do not use it as a dependency. Hope the author of the lib understands! :)
+
+# Documentation
+A better and more in depth documentation on this software will follow soon...
