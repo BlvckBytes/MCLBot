@@ -4,6 +4,7 @@
 .project
 configuration.properties
 .directory
+out/
 target/
 *.iml
 .idea/
