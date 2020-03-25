@@ -145,7 +145,6 @@ public class BotMaster {
    */
   private void loadSessions() {
     try {
-      System.out.println( "SESSPATH: " + sessPath );
       File f = new File( sessPath );
 
       // Create if non existent
